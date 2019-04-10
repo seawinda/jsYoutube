@@ -107,22 +107,22 @@ more.addEventListener('click', () => {
         });
         document.querySelector('.header__item-descr').style.color = '#fff';
     }
-    sliceTitle('.videos__item-descr', 100);
+    sliceTitle('.videos__item-descr', 70);
 
 });
 
 function sliceTitle(selector, count) {
     document.querySelectorAll(selector).forEach(item => {
-        item.textContent.trim();
-        if(item.textContent.length < 100) {
+        const tr = item.textContent.trim();
+        if(tr.length < 70) {
             return;
         } else {
-            const str = item.textContent.slice(0, count+1) + "...";
+            const str = tr.slice(0, count+1) + "...";
             item.textContent = str;
         }
     });
 }
-sliceTitle('.videos__item-descr', 100);
+sliceTitle('.videos__item-descr', 70);
 
 function openModal() {
     modal.style.display = 'block';
